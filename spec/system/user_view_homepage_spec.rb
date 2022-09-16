@@ -2,26 +2,25 @@ require "rails_helper"
 
 describe "Usuario visita tela inicial" do
   it "e vê o nome da app" do
-    #Arrange - unico bloco que pode estar vazio
+    #Arrange
 
-    #Act - método visit
-    visit("/")
+    #Act
+    visit(root_path)
 
-    #Assert - vai estar sempre cheio de expectativas
+    #Assert
     expect(page).to have_content("Galpões & Estoque")
   end
 
   it "e vê os galpões cadastrados" do
     #Arrange
-    #cadastrar 2 galpoes rio e maceio
     Warehouse.create(name: "Rio", code: "SDU", city: "Rio de Janeiro", area: 60_000)
     Warehouse.create(name: "Maceio", code: "MCZ", city: "Maceio", area: 50_000)
 
     #Act
-    visit("/")
+    visit(root_path)
 
     #Assert
-    expect(page).not_to have_content('Não existem galpões cadastrados')
+    expect(page).not_to have_content("Não existem galpões cadastrados")
     expect(page).to have_content("Rio")
     expect(page).to have_content("Código: SDU")
     expect(page).to have_content("Cidade: Rio de Janeiro")
@@ -37,10 +36,9 @@ describe "Usuario visita tela inicial" do
     #Arrange
 
     #Act
-    visit('/')
+    visit(root_path)
 
     #Assert
-    expect(page).to have_content('Não existem galpões cadastrados')
-
+    expect(page).to have_content("Não existem galpões cadastrados")
   end
 end
