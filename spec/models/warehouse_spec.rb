@@ -104,7 +104,7 @@ RSpec.describe Warehouse, type: :model do
 
       it 'false when name is already in use' do
         # Arrange
-        first_warehouse = Warehouse.create(name: 'Rio', code: 'RIO', address: 'Endereço', cep: '25000-000', city: 'Rio', area: 1000,
+        first_warehouse = Warehouse.create!(name: 'Rio', code: 'RIO', address: 'Endereço', cep: '25000-000', city: 'Rio', area: 1000,
                                            description: 'Alguma descrição')
 
         second_warehouse = Warehouse.new(name: 'Rio', code: 'CWB', address: 'Avenida', cep: '35000-000', city: 'Niteroi', area: 1500,
