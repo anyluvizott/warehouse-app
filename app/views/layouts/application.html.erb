@@ -11,9 +11,13 @@
   <body>
     <header>
       <h1>Sistema de Galpões & Estoque</h1>
+      <nav>
+        <%= link_to 'Fornecedores', suppliers_path %>
+      </nav>
     </header>
     <main>
       <div>
+        <%= alert %>
         <%= notice %>
       </div>
       <%= yield %>
