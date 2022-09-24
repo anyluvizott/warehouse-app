@@ -4,7 +4,7 @@ describe 'Usuário edita um fornecedor' do
   it 'a partir da página de detalhes' do
     # Arrange
     Supplier.create!(corporate_name: 'ACME LTDA', brand_name: 'ACME', registration_number: '43447216000102',
-                     full_address: 'Av das Palmas, 100', city: 'Bauru', state: 'SP', email: 'contato@acme.com')
+                     full_address: 'Av das Palmas, 100', city: 'Bauru', state: 'SP', email: 'contato@acme.com', phone_number: '41996686449')
 
     # Act
     visit root_path
@@ -21,12 +21,13 @@ describe 'Usuário edita um fornecedor' do
     expect(page).to have_field('Cidade', with: 'Bauru')
     expect(page).to have_field('Estado', with: 'SP')
     expect(page).to have_field('E-mail', with: 'contato@acme.com')
+    expect(page).to have_field('Telefone', with: '41996686449')
   end
 
   it 'com sucesso' do
     # Arrange
     Supplier.create!(corporate_name: 'ACME LTDA', brand_name: 'ACME', registration_number: '43447216000102',
-                     full_address: 'Av das Palmas, 100', city: 'Bauru', state: 'SP', email: 'contato@acme.com')
+                     full_address: 'Av das Palmas, 100', city: 'Bauru', state: 'SP', email: 'contato@acme.com', phone_number: '41996686449')
 
     # Act
     visit root_path
@@ -43,12 +44,13 @@ describe 'Usuário edita um fornecedor' do
     expect(page).to have_content 'Fornecedor Ammec'
     expect(page).to have_content 'Documento: 43447216000102'
     expect(page).to have_content 'Endereço: Av das Palmeiras, 1520 - Ribeirão Preto - SP'
+    expect(page).to have_content 'Telefone: 41996686449'
   end
 
   it 'e mantém os campos obrigatórios' do
     # Arrange
     Supplier.create!(corporate_name: 'ACME LTDA', brand_name: 'ACME', registration_number: '43447216000102',
-                     full_address: 'Av das Palmas, 100', city: 'Bauru', state: 'SP', email: 'contato@acme.com')
+                     full_address: 'Av das Palmas, 100', city: 'Bauru', state: 'SP', email: 'contato@acme.com', phone_number: '41996686449')
 
     # Act
     visit root_path
