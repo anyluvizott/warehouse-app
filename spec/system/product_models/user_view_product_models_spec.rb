@@ -21,10 +21,10 @@ describe 'Usuário vê modelos de produto' do
                                 registration_number: '34875523000101', full_address: 'Av Nacoes Unidas, 1000', city: 'São Paulo',
                                 state: 'SP', email: 'sac@samsung.com.br', phone_number: '42998566548')
 
-    ProductModel.create!(name: 'TV 32', weight: 8000, width: 70, height: 45, depth: 10, sku: 'TV32-SAMSU-XPTO90',
+    ProductModel.create!(name: 'TV 32', weight: 8000, width: 70, height: 45, depth: 10, sku: 'SAMSU-TV40-60-5502-P',
                          supplier: supplier)
 
-    ProductModel.create!(name: 'SoundBar 7.1 Surround', weight: 3000, width: 80, height: 15, depth: 20, sku: 'SOU71-SAMSU-NOIZ77',
+    ProductModel.create!(name: 'SoundBar 7.1 Surround', weight: 3000, width: 80, height: 15, depth: 20, sku: 'SAMSU-SOBA-80-6345-V',
                          supplier: supplier)
 
     # Act
@@ -35,10 +35,10 @@ describe 'Usuário vê modelos de produto' do
 
     # Assert
     expect(page).to have_content 'TV 32'
-    expect(page).to have_content 'TV32-SAMSU-XPTO90'
+    expect(page).to have_content 'SAMSU-TV40-60-5502-P'
     expect(page).to have_content 'Samsung'
     expect(page).to have_content 'SoundBar 7.1 Surround'
-    expect(page).to have_content 'SOU71-SAMSU-NOIZ77'
+    expect(page).to have_content 'SAMSU-SOBA-80-6345-V'
     expect(page).to have_content 'Samsung'
   end
 
