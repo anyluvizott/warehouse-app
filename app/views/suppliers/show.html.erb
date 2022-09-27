@@ -10,7 +10,19 @@
   <dt>Telefone:</dt>
   <dd><%= @supplier.phone_number %></dd>
 </dl>
-<%= link_to 'Editar', edit_supplier_path(@supplier)%>
+
+
+<% @products = @supplier.product_models.all%>
 <div>
-  <%= link_to('Voltar', root_path) %>
+  <% @products.each do |prod| %>
+    <h2><%= link_to prod.name, prod %></h2>
+  </div>
+<% end %>
+
+
+<div>
+  <%= link_to 'Editar', edit_supplier_path(@supplier)%>
+</div>
+<div>
+  <%= link_to 'Voltar', root_path %>
 </div>
