@@ -8,6 +8,9 @@ gem "cpf_cnpj"
 # Validators
 gem "validators"
 
+# Devise
+gem "devise"
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
 
