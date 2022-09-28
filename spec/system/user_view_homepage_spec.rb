@@ -5,7 +5,7 @@ describe 'Usuario visita tela inicial' do
     # Arrange
 
     # Act
-    visit(root_path)
+    visit root_path
 
     # Assert
     expect(page).to have_content('Galpões & Estoque')
