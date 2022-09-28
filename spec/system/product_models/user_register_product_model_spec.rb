@@ -10,7 +10,12 @@ describe ' Usuário cadastra um modelo de produto' do
     other_supplier = Supplier.create!(brand_name: 'LG', corporate_name: 'LG do Brasil',
                                       registration_number: '34356508000149', full_address: 'Av Ibirapuera, 300', city: 'São Paulo',
                                       state: 'SP', email: 'contato@lg.com.br', phone_number: '42998561994')
+
+    user = User.create!(email: 'any@email.com', password: 'password', name: 'Anyelly')
+
     # Act
+
+    login_as(user)
     visit root_path
     click_on 'Modelos de Produtos'
     click_on 'Cadastrar Novo Produto'
@@ -40,7 +45,10 @@ describe ' Usuário cadastra um modelo de produto' do
                                 registration_number: '34875523000101', full_address: 'Av Nacoes Unidas, 1000', city: 'São Paulo',
                                 state: 'SP', email: 'sac@samsung.com.br', phone_number: '42998566548')
 
+    user = User.create!(email: 'any@email.com', password: 'password', name: 'Anyelly')
+
     # Act
+    login_as(user)
     visit root_path
     click_on 'Modelos de Produtos'
     click_on 'Cadastrar Novo Produto'

@@ -3,10 +3,13 @@ require 'rails_helper'
 describe 'Usuário vê detalhes do fornecedor' do
   it 'a partir da tela inicial' do
     # Arrange
+    user = User.create!(email: 'any@email.com', password: 'password', name: 'Anyelly')
+
     Supplier.create!(corporate_name: 'ACME LTDA', brand_name: 'ACME', registration_number: '43447216000102',
                      full_address: 'Av das Palmas, 100', city: 'Bauru', state: 'SP', email: 'contato@acme.com', phone_number: '41996686449')
 
     # Act
+    login_as(user)
     visit root_path
     click_on 'Fornecedores'
     click_on 'ACME'
@@ -21,9 +24,12 @@ describe 'Usuário vê detalhes do fornecedor' do
 
   it 'e volta para a tela inicial' do
     # Arrange
+    user = User.create!(email: 'any@email.com', password: 'password', name: 'Anyelly')
+
     Supplier.create!(corporate_name: 'ACME LTDA', brand_name: 'ACME', registration_number: '43447216000102',
                      full_address: 'Av das Palmas, 100', city: 'Bauru', state: 'SP', email: 'contato@acme.com', phone_number: '41996686449')
     # Act
+    login_as(user)
     visit root_path
     click_on 'Fornecedores'
     click_on 'ACME'

@@ -1,5 +1,9 @@
 <h2>Entrar</h2>
 
+<div>
+<%= notice %>
+</div>
+
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />

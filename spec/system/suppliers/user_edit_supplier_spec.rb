@@ -6,7 +6,10 @@ describe 'Usuário edita um fornecedor' do
     Supplier.create!(corporate_name: 'ACME LTDA', brand_name: 'ACME', registration_number: '43447216000102',
                      full_address: 'Av das Palmas, 100', city: 'Bauru', state: 'SP', email: 'contato@acme.com', phone_number: '41996686449')
 
+    user = User.create!(email: 'any@email.com', password: 'password', name: 'Anyelly')
+
     # Act
+    login_as(user)
     visit root_path
     click_on 'Fornecedores'
     click_on 'ACME'
@@ -28,8 +31,10 @@ describe 'Usuário edita um fornecedor' do
     # Arrange
     Supplier.create!(corporate_name: 'ACME LTDA', brand_name: 'ACME', registration_number: '43447216000102',
                      full_address: 'Av das Palmas, 100', city: 'Bauru', state: 'SP', email: 'contato@acme.com', phone_number: '41996686449')
+    user = User.create!(email: 'any@email.com', password: 'password', name: 'Anyelly')
 
     # Act
+    login_as(user)
     visit root_path
     click_on 'Fornecedores'
     click_on 'ACME'
@@ -51,8 +56,10 @@ describe 'Usuário edita um fornecedor' do
     # Arrange
     Supplier.create!(corporate_name: 'ACME LTDA', brand_name: 'ACME', registration_number: '43447216000102',
                      full_address: 'Av das Palmas, 100', city: 'Bauru', state: 'SP', email: 'contato@acme.com', phone_number: '41996686449')
+    user = User.create!(email: 'any@email.com', password: 'password', name: 'Anyelly')
 
     # Act
+    login_as(user)
     visit root_path
     click_on 'Fornecedores'
     click_on 'ACME'
