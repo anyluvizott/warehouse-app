@@ -10,4 +10,12 @@ RSpec.describe User, type: :model do
       expect(result).to eq false
     end
   end
+
+  describe '#description' do
+    it 'exibe o nome e o email' do
+      u = User.new(name: 'Rafael Hitoshi', email: 'rafahito@email.com')
+      result = u.description
+      expect(result).to eq 'Rafael Hitoshi - rafahito@email.com'
+    end
+  end
 end

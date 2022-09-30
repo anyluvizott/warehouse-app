@@ -9,10 +9,10 @@ Warehouse.create!(name: 'Aeroporto Internacional Afonso Pena', code: 'CWB', city
 
 # Criando alguns fornecedores de exemplo:
 sup1 = Supplier.create!(corporate_name: 'ACME LTDA', brand_name: 'ACME', registration_number: '43447216000102',
-                 full_address: 'Av das Palmas, 100', city: 'Bauru', state: 'SP', email: 'contato@acme.com', phone_number: '41996686449')
+                        full_address: 'Av das Palmas, 100', city: 'Bauru', state: 'SP', email: 'contato@acme.com', phone_number: '41996686449')
 
 sup2 = Supplier.create!(corporate_name: 'YELLOW Distribuidora', brand_name: 'Yellow', registration_number: '34108887000158',
-                 full_address: 'Rua Maestro Francisco Antonello, 382', city: 'Curitiba', state: 'PR', email: 'vendas@yellow.com', phone_number: '41996681994')
+                        full_address: 'Rua Maestro Francisco Antonello, 382', city: 'Curitiba', state: 'PR', email: 'vendas@yellow.com', phone_number: '41996681994')
 
 # Criando alguns Modelos de Produto de exemplo:
 ProductModel.create!(name: 'TV 32', weight: 8000, width: 70, height: 45, depth: 10, sku: 'SAMSU-TV40-60-5502-P',
@@ -20,3 +20,5 @@ ProductModel.create!(name: 'TV 32', weight: 8000, width: 70, height: 45, depth: 
 
 ProductModel.create!(name: 'SoundBar 7.1 Surround', weight: 3000, width: 80, height: 15, depth: 20, sku: 'SAMSU-SOBA-80-6345-V',
                      supplier: sup1)
+
+User.create!(email: 'any@email.com', password: 'password', name: 'Anyelly')
