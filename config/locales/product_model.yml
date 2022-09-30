@@ -1,7 +1,7 @@
 pt-BR:
   activerecord:
     models:
-      product_model: Modelo de Produto
+      product_model: "Modelo de Produto"
     attributes:
       product_model:
         name: "Nome"
@@ -12,3 +12,10 @@ pt-BR:
         sku: "SKU"
         supplier_id: "Fornecedor"
         supplier: "Fornecedor"
+        product_models: "Modelos de Produto"
+        no_registered_product_model: "Nenhum modelo de produto cadastrado"
+        dimension: "Dimensão"
+        register_new_product_model: "Cadastrar Novo Modelo de Produto"
+        check_the_errors: "Verifique os erros abaixo:"
+
+        

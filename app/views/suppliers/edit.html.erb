@@ -1,3 +1,10 @@
-<h1>Editar Fornecedor</h1>
-
+<h1><%= Supplier.human_attribute_name(:edit_supplier)%></h1>
+<% if(@supplier.errors.any?) %>
+  <p><%= Supplier.human_attribute_name(:check_the_errors)%>:</p>
+  <ul>
+    <% @supplier.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
 <%= render 'sup_form' %>

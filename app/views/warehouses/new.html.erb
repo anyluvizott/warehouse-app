@@ -1,6 +1,6 @@
-<h1>Novo Galpão</h1>
+<h1><%= Warehouse.human_attribute_name(:new_warehouse)%></h1>
 <% if(@warehouse.errors.any?) %>
-  <p>Verifique os erros abaixo:</p>
+  <p><%= Warehouse.human_attribute_name(:check_the_errors)%>:</p>
   <ul>
     <% @warehouse.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>

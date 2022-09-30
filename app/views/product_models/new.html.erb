@@ -1,4 +1,14 @@
-<h1>Cadastrar Novo Modelo de Produto</h1>
+<h1><%= ProductModel.human_attribute_name(:register_new_product_model) %></h1>
+
+<% if(@product_model.errors.any?) %>
+  <p><%= ProductModel.human_attribute_name(:check_the_errors)%>:</p>
+  <ul>
+    <% @product_model.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_with(model: @product_model) do |f| %>
   <div>
     <%= f.label :name %>
@@ -30,3 +40,4 @@
   </div>
   <%= f.submit 'Enviar' %>
 <% end %>
+

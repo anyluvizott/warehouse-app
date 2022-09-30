@@ -1,4 +1,4 @@
-<h1>Fornecedores</h1>
+<h1><%= Supplier.human_attribute_name(:suppliers)%></h1>
 
 <%= link_to 'Cadastrar novo fornecedor', new_supplier_path %>
 
@@ -6,8 +6,8 @@
   <table>
     <thead>
       <tr>
-        <th>Nome</th>
-        <th>Localização</th>
+        <th><%= Supplier.human_attribute_name(:name)%></th>
+        <th><%= Supplier.human_attribute_name(:location)%></th>
       </tr>
     </thead>
     <tbody>
@@ -20,5 +20,5 @@
     </tbody>
   </table>
 <% else %>
-  <p>Não existem fornecedores cadastrados</p>
+  <p><%= Supplier.human_attribute_name(:no_registered_suppliers)%></p>
 <% end %>

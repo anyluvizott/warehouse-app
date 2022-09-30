@@ -1,4 +1,4 @@
-<h1>Modelos de Produto</h1>
+<h1><%= ProductModel.model_name.human %></h1>
 
 <%= link_to 'Cadastrar Novo Produto', new_product_model_path %>
 
@@ -7,13 +7,13 @@
     <div>
       <h2><%= link_to pm.name, pm %>
         <dl>
-          <dt>SKU</dt>
+          <dt><%= ProductModel.human_attribute_name(:sku) %></dt>
           <dd><%= pm.sku %></dd>
-          <dt>Fornecedor</dt>
+          <dt><%= ProductModel.human_attribute_name(:supplier) %></dt>
           <dd><%= pm.supplier.brand_name %></dd>
         </dl>
       </div>
     <% end %>
   <% else %>
-    <p>Nenhum modelo de produto cadastrado</p>
+    <p><%= ProductModel.human_attribute_name(:no_registered_product_model) %></p>
   <% end %>

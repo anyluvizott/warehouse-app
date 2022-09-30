@@ -5,4 +5,9 @@ class Supplier < ApplicationRecord
             presence: true
   validates :registration_number, uniqueness: true
   validates :registration_number, cnpj: true
+
+  def sup_description
+    "#{brand_name} - #{corporate_name} - #{registration_number}"
+  end
+
 end

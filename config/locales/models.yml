@@ -11,3 +11,6 @@ pt-BR:
         address: "Endereço"
         area: "Área"
         cep: "CEP"
+        edit_warehouse: "Editar Galpão"
+        check_the_errors: "Verifique os erros abaixo:"
+        new_warehouse: "Novo Galpão"

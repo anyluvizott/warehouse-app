@@ -113,4 +113,15 @@ RSpec.describe Supplier, type: :model do
       end
     end
   end
+
+  describe '#sup_description' do
+    it 'exibe o nome fantasia, razão social e CNPJ do fornecedor' do
+      sup = Supplier.new(corporate_name: 'YELLOW Distribuidora', brand_name: 'Yellow',
+        registration_number: '34108887000158')
+
+      result = sup.sup_description
+
+      expect(result).to eq('Yellow - YELLOW Distribuidora - 34108887000158')
+    end
+  end
 end
