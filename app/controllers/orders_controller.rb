@@ -12,12 +12,18 @@ class OrdersController < ApplicationController
 
     @order = Order.new(order_params)
     @order.user = current_user
-    @order.save
-    redirect_to @order, notice: 'Pedido registrado com sucesso.'
+
+    if @order.save
+      redirect_to @order, notice: 'Pedido registrado com sucesso.'
+    else
+      @warehouses = Warehouse.all
+      @suppliers = Supplier.all
+      flash.now[:alert] = 'Não foi possível cadastrar seu pedido'
+      render 'new'
+    end
   end
 
   def show
     @order = Order.find(params[:id])
   end
-
 end
