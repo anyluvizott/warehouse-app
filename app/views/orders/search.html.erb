@@ -14,8 +14,8 @@
 </dl>
 <% end %>
 
+<p><%= @orders.count %> <%= Order.model_name.human(count: @orders.count).downcase %> <%= t(:found, count: @orders.count)%> </p>
 <% @orders.each do |order| %>
-<p><%= @orders.count %> <%= Order.model_name.human(count: @orders.count)%> <%= I18n.translate() %> </p>
 <dl>
 <dt><%= Order.human_attribute_name(:code) %>:</dt>
 <dd><%= order.code %></dd>
