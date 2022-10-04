@@ -59,13 +59,13 @@ describe 'Usuário busca por um pedido' do
     sup1 = Supplier.create!(corporate_name: 'ACME LTDA', brand_name: 'ACME', registration_number: '43447216000102',
                             full_address: 'Av das Palmas, 100', city: 'Bauru', state: 'SP', email: 'contato@acme.com', phone_number: '41996686449')
 
-    allow(SecureRandom).to receive(:alphanumeric).and_return('GRU12345')
+    allow(SecureRandom).to receive(:alphanumeric).and_return('GRU1234567')
     order1 = Order.create!(user:, warehouse: ware1, supplier: sup1, estimated_delivery_date: 1.day.from_now)
 
-    allow(SecureRandom).to receive(:alphanumeric).and_return('GRU67891')
+    allow(SecureRandom).to receive(:alphanumeric).and_return('GRU6789123')
     order2 = Order.create!(user:, warehouse: ware1, supplier: sup1, estimated_delivery_date: 1.day.from_now)
 
-    allow(SecureRandom).to receive(:alphanumeric).and_return('CWB12345')
+    allow(SecureRandom).to receive(:alphanumeric).and_return('CWB1234567')
     order3 = Order.create!(user:, warehouse: ware2, supplier: sup1, estimated_delivery_date: 1.day.from_now)
 
     login_as(user)
@@ -74,11 +74,11 @@ describe 'Usuário busca por um pedido' do
     click_on 'Buscar'
 
     expect(page).to have_content('2 pedidos encontrados')
-    expect(page).to have_content('GRU12345')
-    expect(page).to have_content('GRU67891')
+    expect(page).to have_content('GRU1234567')
+    expect(page).to have_content('GRU6789123')
     expect(page).to have_content 'Galpão Destino: GRU - Aeroporto SP'
 
-    expect(page).not_to have_content('CWB12345')
+    expect(page).not_to have_content('CWB1234567')
     expect(page).not_to have_content 'Galpão Destino: CWB -Aeroporto Internacional Afonso Pena'
   end
 end
