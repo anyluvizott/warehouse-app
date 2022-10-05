@@ -41,6 +41,7 @@ describe 'Usuário cadastra um pedido' do
     expect(page).to have_content 'Galpão Destino: GRU - Aeroporto SP'
     expect(page).to have_content 'Fornecedor: ACME LTDA'
     expect(page).to have_content 'Usuário Responsável: Anyelly - any@email.com'
+    expect(page).to have_content 'Situação do Pedido: Pendente'
     expect(page).not_to have_content 'Aeroporto Internacional Afonso Pena'
     expect(page).not_to have_content 'YELLOW Distribuidora'
   end
