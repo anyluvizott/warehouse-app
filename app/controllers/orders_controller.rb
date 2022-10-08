@@ -1,5 +1,4 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_order_and_check_user, only: %i[show edit update delivered canceled]
 
   def index
@@ -48,6 +47,13 @@ class OrdersController < ApplicationController
 
   def delivered
     @order.delivered!
+
+    @order.order_items.each do |item|
+      item.quantity.times do
+        StockProduct.create!(order: @order, product_model: item.product_model,
+                             warehouse: @order.warehouse)
+      end
+    end
     redirect_to @order
   end
 
