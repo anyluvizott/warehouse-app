@@ -1,3 +1,6 @@
+# Criando um user de exemplo:                 
+user = User.create!(email: 'any@email.com', password: 'password', name: 'Anyelly')
+
 # Criando alguns galpões de exemplo:
 ware1 = Warehouse.create!(name: 'Aeroporto SP', code: 'GRU', city: 'Guarulhos', area: 100_000,
                   address: 'Avenida do Aeroporto, 1000', cep: '15000-000',
@@ -19,12 +22,10 @@ prod1 = ProductModel.create!(name: 'TV 32', weight: 8000, width: 70, height: 45,
                      supplier: sup1)
 
 prod2 = ProductModel.create!(name: 'SoundBar 7.1 Surround', weight: 3000, width: 80, height: 15, depth: 20, sku: 'SAMSU-SOBA-80-6345-V',
-                     supplier: sup1)
-
-# Criando um user de exemplo:                 
-user = User.create!(email: 'any@email.com', password: 'password', name: 'Anyelly')
+                     supplier: sup2)
 
 # Criando alguns pedidos de exemplo:
-order = Order.create!(user: user, warehouse: ware2, supplier: sup2, estimated_delivery_date: 1.day.from_now)
-order = Order.create!(user: user, warehouse: ware2, supplier: sup1, estimated_delivery_date: 2.days.from_now)
-order = Order.create!(user: user, warehouse: ware1, supplier: sup2, estimated_delivery_date: 3.days.from_now)
+order1 = Order.create!(user: user, warehouse: ware1, supplier: sup1, estimated_delivery_date: 1.day.from_now)
+order2 = Order.create!(user: user, warehouse: ware1, supplier: sup2, estimated_delivery_date: 2.days.from_now)
+order3 = Order.create!(user: user, warehouse: ware2, supplier: sup1, estimated_delivery_date: 3.days.from_now)
+order4 = Order.create!(user: user, warehouse: ware2, supplier: sup2, estimated_delivery_date: 3.days.from_now)

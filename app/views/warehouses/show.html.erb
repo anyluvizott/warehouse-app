@@ -15,7 +15,9 @@
 <section id="stock_products">
   <h2>Itens em Estoque</h2>
   <% @stocks.each_pair do |pm, quantity| %>
+  <div>
     <%= quantity %> x <%= pm.sku %>
+  </div>
   <% end %>
 </section>
 
