@@ -6,15 +6,15 @@ warehouse_one = Warehouse.create!(name: 'Aeroporto SP', code: 'GRU', city: 'Guar
                   address: 'Avenida do Aeroporto, 1000', cep: '15000-000',
                   description: 'Galpão destinado para cargas internacionais')
 
-warerehouse_two = Warehouse.create!(name: 'Aeroporto Internacional Afonso Pena', code: 'CWB', city: 'São José dos Pinhais', area: 150_000,
+warehouse_two = Warehouse.create!(name: 'Aeroporto Internacional Afonso Pena', code: 'CWB', city: 'São José dos Pinhais', area: 150_000,
                   address: 'Av. Rocha Pombo, 1000', cep: '83010-900',
                   description: 'Galpão destinado para cargas internacionais')
 
-warerehouse_three = Warehouse.create!(name: 'Aeroporto do Rio de Janeiro', code: 'SDU', city: 'Rio de Janeiro', area: 95_800,
+warehouse_three = Warehouse.create!(name: 'Aeroporto do Rio de Janeiro', code: 'SDU', city: 'Rio de Janeiro', area: 95_800,
                   address: 'Praça Sen. Salgado Filho, s/n - Centro', cep: '20021-340',
                   description: 'Galpão destinada para cargas da região do Rio de Janeiro')
 
-warerehouse_four = Warehouse.create!(name: 'Aeroporto Internacional de Brasília', code: 'BSB', city: 'Brasília', area: 100_000,
+warehouse_four = Warehouse.create!(name: 'Aeroporto Internacional de Brasília', code: 'BSB', city: 'Brasília', area: 100_000,
                   address: 'Lago Sul, Brasília', cep: '71608-900',
                   description: 'Galpão destinado para cargas da região de Brasília')
 
@@ -25,7 +25,7 @@ supplier_one = Supplier.create!(corporate_name: 'ACME LTDA', brand_name: 'ACME',
 supplier_two = Supplier.create!(corporate_name: 'YELLOW Distribuidora', brand_name: 'Yellow', registration_number: '34108887000158',
                         full_address: 'Rua Maestro Francisco Antonello, 382', city: 'Curitiba', state: 'PR', email: 'vendas@yellow.com', phone_number: '41996681994')
 
-supplier_two = Supplier.create!(corporate_name: 'HAYAMAX LTDA', brand_name: 'Hayamax', registration_number: '59528502000132',
+supplier_three = Supplier.create!(corporate_name: 'HAYAMAX LTDA', brand_name: 'Hayamax', registration_number: '59528502000132',
                         full_address: 'Rua João Marques de Nóbrega, 300', city: 'Ibiporã', state: 'PR', email: 'vendas@hayamax.com', phone_number: '41996682557')
 
 # Criando alguns Modelos de Produto de exemplo:
