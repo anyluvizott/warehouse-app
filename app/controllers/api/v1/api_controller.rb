@@ -5,10 +5,10 @@ class Api::V1::ApiController < ActionController::API
   private
 
   def return_500
-    render status: 500
+    render plain: { error: 'Error 500' }.to_json, status: 500, content_type: 'application/json'
   end
 
   def return_404
-    render status: 404
+    render plain: { error: 'Error 404' }.to_json, status: 404, content_type: 'application/json'
   end
 end
