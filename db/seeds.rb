@@ -1,5 +1,5 @@
 # Criando um user de exemplo:                 
-user = User.create!(email: 'any@email.com', password: 'password', name: 'Anyelly')
+user = User.create!(email: 'ana@email.com', password: 'password', name: 'Ana')
 
 # Criando alguns galpões de exemplo:
 warehouse_one = Warehouse.create!(name: 'Aeroporto SP', code: 'GRU', city: 'Guarulhos', area: 100_000,
